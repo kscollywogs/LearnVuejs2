@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+<!--key作为标识 相同就可以复用 不同不可复用-->
+<div id="app">
+  <span v-if="isUser">
+    <label for="1">用户账号</label>
+    <input type="text" id="1" key="username">
+  </span>
+  <span v-else>
+    <label for="2">用户密码</label>
+    <input id="2" type="text" key="password">
+  </span>
+  <button @click="isUser = !isUser">切换</button>
+</div>
+<script>
+  const app = new Vue({
+    el:'#app',
+    data:{
+      isUser:true,
+    },
+
+  })
+</script>
+</body>
+</html>

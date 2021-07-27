@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <cpn></cpn>
+</div>
+
+<!--<script id="cpn" type="text/x-template">-->
+<template id="cpn1">
+  <div>
+    <h3>{{title}} - 1233</h3>
+    <p>12345667</p>
+    <p>{{title}}</p>
+  </div>
+</template>
+
+<!--</script>-->
+
+<script>
+  // 注册一个全局组件
+  Vue.component('cpn',{
+    template:'#cpn1',
+    data(){
+      return{
+        title:'abc'
+      }
+    }
+  })
+
+  const app = new Vue({
+    el:'#app'
+  })
+</script>
+</body>
+</html>

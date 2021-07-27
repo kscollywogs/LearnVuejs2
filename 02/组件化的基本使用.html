@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <my-cpn></my-cpn>
+  <my-cpn></my-cpn>
+</div>
+<script>
+// 1. 创建组件构造器对象
+// 2  注册组件
+
+// ES6: `` 定义字符串 可换行
+
+const cpnC = Vue.extend({
+  template:`
+            <div>
+              <h2>title123</h2>
+              <p>content123</p>
+              <p>content456</p>
+            </div>`,
+})
+
+Vue.component('my-cpn', cpnC)
+
+
+
+
+
+
+const app = new Vue({
+  el:'#app',
+  data:{
+
+  }
+})
+</script>
+</body>
+</html>

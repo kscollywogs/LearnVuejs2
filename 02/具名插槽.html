@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <cpn>
+<!--    <b >1234</b>-->
+    <b slot="center">1234</b>
+  </cpn>
+</div>
+<template id="cpn">
+  <div>
+    <slot name="left">
+      <span>left</span>
+    </slot>
+    <slot name="center">
+      <span>middle</span>
+    </slot>
+    <slot>
+      <span>right</span>
+    </slot>
+  </div>
+</template>
+<script>
+  const app = new Vue({
+    el:'#app',
+    components:{
+      cpn:{
+        template:'#cpn'
+      }
+    }
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="checkbox" value="apple" v-model="hobbies">apple
+    <input type="checkbox" value="banana" v-model="hobbies">banana
+    <input type="checkbox" value="grape" v-model="hobbies">grape
+    <input type="checkbox" value="pear" v-model="hobbies">pear
+  <h2>choose:{{hobbies}}</h2>
+
+<!--  <input type="checkbox" v-for="item in originalHobbies" :value="item">-->
+<!--  动态绑定id和for（v-bind）-->
+  <label v-for="item in originalHobbies" :for="item">
+    <input type="checkbox" :value="item" v-model="hobbies" :id="item">{{item}}
+  </label>
+</div>
+<script>
+
+  const app = new Vue ({
+    el:'#app',
+    data:{
+      hobbies:[],
+      originalHobbies:['apple','pear','grapefruit','cheery']
+    }
+  })
+</script>
+</body>
+</html>

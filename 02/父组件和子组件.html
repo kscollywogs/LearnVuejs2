@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <cpn2></cpn2>
+
+<!--<cpn1></cpn1>-->
+</div>
+<script>
+// 第一个组件构造器
+  const cpnc1 = Vue.extend({
+    template:`
+    <div>
+    <h2>title11111</h2>
+    <p>content 123445</p>
+    </div> `
+  })
+
+  const cpnc2 = Vue.extend({
+    template:`
+    <div>
+    <h2>title22222222</h2>
+    <p>content 22636</p>
+    <cpn1></cpn1>
+    </div> `,
+    components:{
+      cpn1:cpnc1
+    }
+  })
+
+// root 组件
+  const app = new Vue({
+    el:'#app',
+    data:{},
+    components:{
+      cpn2:cpnc2,
+      // cpn1:cpnc1
+    }
+  })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+<!--  v-if当条件为false 对应元素根本不会存在dom中-->
+<!--  v-show则为隐藏display none-->
+  <h2 v-show="isShow">{{message}}</h2>
+  <h2 v-if="isShow">{{message}}</h2>
+
+</div>
+<script>
+  const app = new Vue({
+    el:'#app',
+    data:{
+      message:'nihao',
+      isShow:true,
+    }
+  })
+</script>
+</body>
+</html>

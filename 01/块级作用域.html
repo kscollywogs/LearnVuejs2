@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+</div>
+<script>
+  // const app = new Vue({
+  //   el:'#app',
+  //   data:{
+  //
+  //   }
+  // })
+
+  // ES5 if for都没有块级作用域 要借助于function作用域来解决引用外面变量的问题
+  // var btns = document.getElementsByTagName('button');
+  // for (var i=0, i<btns.length; i++){
+  //   btns[i].addEventListener('click', function () {
+  //     console.log('第' + i + '个按钮被打印');
+  //   })
+  // }
+
+  // ES6中加入let let有if for作用域
+
+  const btns = document.getElementsByTagName('button')
+  for (let i = 0; i<btns.length; i++){
+    btns[i].addEventListener('click', function () {
+      console.log('the ' + i + ' is clicked');
+    })
+  }
+</script>
+</body>
+</html>

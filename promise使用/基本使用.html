@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+<script>
+  // 使用setTimeout
+  // setTimeout(() => {
+  //   console.log('nihao')
+  // }, 1000)
+
+
+  new Promise((resolve, reject) => {
+    // 一次请求
+    setTimeout(() => {
+      resolve()
+    }, 1000)
+  }).then(() => {
+    // 处理的代码
+    console.log('nihao')
+    console.log('nihao')
+    console.log('nihao')
+    console.log('nihao')
+
+    return new Promise((resolve, reject) => {
+      // 两次请求
+      setTimeout(() => {
+        resolve()
+      },1000).then(() => {
+        console.log('hello')
+        console.log('hello')
+        })
+      })
+    })
+
+
+  new Promise((resolve, reject) => {
+    setTimeout((data) => {
+      resolve(data)
+      reject('error message')
+    },1000)
+  }).then((data) => {
+    // 要处理的代码
+  }).catch((err) => {
+    console.log(err)
+  })
+
+
+</script>
+</body>
+</html>

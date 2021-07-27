@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <p v-if="isShow">{{message}}</p>
+  <p v-else="isShow">123</p>
+
+
+<!--  <h2 v-if="score>=90">excellent</h2>-->
+<!--  <h2 v-else-if="score>=80">good</h2>-->
+<!--  <h2 v-else-if="score>=60">ok</h2>-->
+<!--  <h2 v-else>fail</h2>-->
+
+  <h2>{{result()}}</h2>
+</div>
+<script>
+  const app = new Vue({
+    el:'#app',
+    data:{
+      message:'nihao',
+      isShow:false,
+      score:60,
+    },
+    methods:{
+      result(){
+        let showMessage = '';
+        if (this.score >= 90){
+          showMessage = 'excellent'
+        } else if (this.score >= 80){
+          showMessage = 'good'
+        } else if (this.score >= 60){
+          showMessage = 'ok'
+        } else {
+          showMessage = 'fail'
+        }
+        return showMessage
+      }
+    },
+  })
+</script>
+</body>
+</html>

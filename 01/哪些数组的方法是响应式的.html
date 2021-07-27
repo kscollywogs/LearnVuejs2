@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+<!--push pop shift unshift splice sort reverse 响应式-->
+  <ul>
+    <li v-for="item in letters">{{item}}</li>
+  </ul>
+  <button @click="btnClick">anniu</button>
+</div>
+<script>
+  const app = new Vue({
+    el:'#app',
+    data:{
+      name:['nihao','wosh','dage'],
+      letters:['a','b','d','c'],
+    },
+    methods:{
+      btnClick(){
+        // 1.push
+        // this.letters.push('1123')
+        // this.letters[0] = 'bb';
+        // this.letters.unshift('abc');
+        // splice删除，插入，替换元素
+        // 删除元素：第二个参数传入要删除几个元素
+        // 替换元素：第二个参数表示要替换几个元素，后面是用于替换前面的元素
+        // 插入元素：第二个参数，传入0，并且后面
+        // this.letters.splice(2, this.letters.length-2)
+        // this.letters.sort()
+        Vue.set(this.letters, 0, 'bbbb')
+      }
+    }
+  })
+
+
+</script>
+</body>
+</html>

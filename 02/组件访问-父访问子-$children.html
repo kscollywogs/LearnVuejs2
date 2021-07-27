@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <cpn></cpn>
+  <cpn></cpn>
+  <cpn ref="aa"></cpn>
+  <button @click="btnClick">button</button>
+</div>
+<template id="cpn">
+  <div>I am template</div>
+</template>
+<script>
+  const app = new Vue({
+    el:'#app',
+    data:{
+    },
+    methods:{
+      btnClick(){
+        // $children
+        // console.log(this.$children)
+        // // this.$children[0].showMessage()
+        // for (let c of this.$children){
+        //   console.log(c.name)
+        //   c.showMessage()
+        // }
+
+        // $refs
+        console.log(this.$refs.aa.name)
+      }
+    },
+    components:{
+      cpn:{
+        template:'#cpn',
+        data(){
+          return{
+            name:'I am child.'
+          }
+        },
+        methods:{
+          showMessage(){
+            console.log('showMessage')
+          }
+        }
+      },
+    }
+  })
+</script>
+</body>
+</html>

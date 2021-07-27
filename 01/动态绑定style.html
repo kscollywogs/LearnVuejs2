@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+<!--    <h2 v-bind:style="{key属性名: value属性值}">{{message}}</h2>-->
+    <p v-bind:style="{fontSize:'50px'}">{{message}}</p>
+    <p v-bind:style="{fontSize:finalSize}">{{message}}</p>
+    <p v-bind:style="{fontSize:finalSize2 + 'px', backgroundColor:finalColor}">{{message}}</p>
+    <p v-bind:style="getStyle()">{{message}}</p>
+
+</div>
+<script>
+  const app = new Vue({
+    el:'#app',
+    data:{
+      message:'nihao',
+      movies:['1111','2222','AAAA','CCCC'],
+      finalSize:'100px',
+      finalSize2:100,
+      finalColor:'red',
+    },
+    methods:{
+      getStyle: function () {
+        return {fontSize:this.finalSize2 + 'px', color:this.finalColor}
+      }
+    }
+  })
+</script>
+</body>
+</html>

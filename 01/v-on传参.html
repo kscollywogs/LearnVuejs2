@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+<!--  .stop修饰符-->
+  <div @click="divClick">
+    aaaaaa
+    <button @click.stop="btnClick">alala</button>
+  </div>
+
+<!--  .prevent阻止默认事件-->
+  <form>
+    <input type="submit" @click.prevent="submitClick">
+  </form>
+  <input type="text" @keyup.enter="keyUp">
+</div>
+<script>
+  const app = new Vue({
+    el:'#app',
+    methods:{
+      btnClick(){
+        console.log('btnClick')
+      },
+      divClick(){
+        console.log('divClick ')
+      },
+      submitClick(){
+        console.log('submitClick ')
+      },
+      keyUp(){
+        console.log('keuUp')
+      }
+    }
+
+  })
+</script>
+</body>
+</html>
